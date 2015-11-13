@@ -1,0 +1,15 @@
+<div id='form'>
+ <%= form_for @post do |f| %>
+   <div class='create_pin_url'>
+     <%= f.label :img_url %>
+     <%= f.text_field :img_url %>
+   </div>
+   <div class='create_pin_title'>
+     <%= f.label :title %>
+     <%= f.text_area :title %>
+   </div>
+   <div class='form_pin_submit'>
+     <%= f.submit %>
+   </div>
+ <% end %>
+</div>

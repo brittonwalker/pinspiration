@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'home#index'
+  get 'pins/index'
+
+  devise_for :users, :path => 'accounts'
+  root to: 'pins#allpins'
+
+  get 'pins/allpins', to: 'pins#allpins'
+  resources :pins, only: [:show]
 
   resources :users do
-    resources :pins
+    resources :pins, only: [:index, :update, :create]
   end
 end

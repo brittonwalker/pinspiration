@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   background-color: #315A4F;
+ }
+
+ .each_pin {
+   margin: 10px;
+   border: 1px solid #000;
+   padding: 10px;
+   background-color: #fff;
+   width: 300px;
+   border-radius: 10px;
+   display: inline-block;
+ }
+
+ .pin_image {
+   width: inherit;
+   border: 1px solid #000;
+   }
+
+  .pin_title {
+    text-align: center;
+  }
