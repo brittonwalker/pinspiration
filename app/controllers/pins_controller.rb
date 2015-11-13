@@ -1,13 +1,19 @@
 class PinsController < ApplicationController
-  before_action :set_pin, only: [:show, :edit, :create, :update, :destroy]
-  before_action :set_user, only: [:index]
 
   def index
-    @pins = @user.pins.find(@user.id)
+    @pins = Pin.all
+  end
+
+  def show
+    @pin = Pin.find(params[:id])
   end
 
   def allpins
     @pins = Pin.all
+  end
+
+  def new
+    @pin = Pin.new
   end
 
   def create
@@ -15,16 +21,14 @@ class PinsController < ApplicationController
     redirect_to pins_path
   end
 
+  def edit
+    @pin = Pin.find(params[:id])
+    redirect_to pins_path
+  end
+
 
 
   private
-  def set_pin
-    @pin = Pin.find(params[:id])
-  end
-
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def pin_params
     params.require(:pin).permit(:title, :img_url)

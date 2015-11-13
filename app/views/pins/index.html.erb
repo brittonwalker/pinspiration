@@ -1,11 +1,10 @@
-<h2><%= @user.username %>'s Pins</h2>
-
-
 <% @pins.each do |pin| %>
 <div class="each_pin">
     <%= image_tag pin.img_url, class: "pin_image"%>
   <div class="pin_title">
-    <%= pin.title %>
+    <%= link_to pin.title, pin_path(pin) %>
   </div>
 </div>
+
+
 <% end %>
